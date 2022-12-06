@@ -1,15 +1,19 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 * {
   padding: 0;
   border: 0;
   margin: 0;
 
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
 }
 
 :root {
   --primary-color: #eea1e3;
-  --primary-color1: #f4b5eb;
+  --primary-color1: #ff23de;
   --secondary-color: #565656;
   --secondary-color1: #363232;
 }
@@ -23,8 +27,20 @@ body {
   height: 200vh;
   overflow: scroll;
 
-  background-color: var(--secondary-color1);
+  font-size: 20px;
   color: var(--primary-color1);
+}
+
+.polka {
+  position: absolute;
+  z-index: -1;
+  background-image: radial-gradient(#eea1e234, 20%, transparent 20%),
+     radial-gradient(#eea1e234 20%, transparent 20%);
+  background-color: var(--secondary-color1);
+  background-position: 0 0, 50px 50px;
+  background-size: 100px 100px;
+  height: 200vh;
+  width: 100%;
 }
 
 .main {
@@ -32,17 +48,34 @@ body {
   width: 80vw;
   display: grid;
   justify-items: center;
+  grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas:
   "header header header header header"
   "profile profile letter letter letter"
   "profile profile letter letter letter"
   "profile profile letter letter letter"
   ". . . . spotify";
+  gap: 1rem;
   /* border: 5px solid white; */
+}
+
+.main > div {
+  border: 15px solid transparent;
+  border-image: url(src/Untitled\ design\ \(1\).png) 20% round;
 }
 
 .main > * {
   border: 1px solid blue;
+}
+
+.background {
+  position: static;
+  padding: 0.9rem;
+  border: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(240, 240, 240);
 }
 
 nav {
@@ -51,16 +84,28 @@ nav {
 }
 
 .content-title {
+  color: var(--primary-color1);
   grid-area: header;
 }
 
 .profile {
   grid-area: profile;
+  width: 100%;
+}
+
+.pp {
+  width: 170px;
+  height: 150px;
+
+  padding: 5px;
+  border: 10px solid var(--primary-color1);
+}
+
+.pp img {
+  width: 100%;
+  height: 100%;
 }
 
 .letter {
   grid-area: letter;
 }
-
-
-
