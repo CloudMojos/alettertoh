@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Source+Code+Pro&display=swap');
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -8,10 +10,12 @@
   margin: 0;
 
   /* border: 1px solid red; */
-
 }
 
 :root {
+  font-size: 16px;
+  --primary-font: 'Source Code Pro', monospace;
+  --secondary-font: 'Poppins', sans-serif;
   --primary-color: #eea1e3;
   --primary-color1: #ff23de;
   --secondary-color: #565656;
@@ -20,92 +24,26 @@
 
 body {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   flex-direction: column;
-
-  height: 200vh;
-  overflow: scroll;
-
-  font-size: 20px;
-  color: var(--primary-color1);
+  font-family: var(--primary-font);
+  font-size: clamp(20px, 2vw, 50px);
+  margin: 2rem;
 }
 
-.polka {
-  position: absolute;
-  z-index: -1;
-  background-image: radial-gradient(#eea1e234, 20%, transparent 20%),
-     radial-gradient(#eea1e234 20%, transparent 20%);
-  background-color: var(--secondary-color1);
-  background-position: 0 0, 50px 50px;
-  background-size: 100px 100px;
-  height: 200vh;
-  width: 100%;
+figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.main {
-  height: 70%;
-  width: 80vw;
-  display: grid;
-  justify-items: center;
-  grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas:
-  "header header header header header"
-  "profile profile letter letter letter"
-  "profile profile letter letter letter"
-  "profile profile letter letter letter"
-  ". . . . spotify";
-  gap: 1rem;
-  /* border: 5px solid white; */
+img {
+  min-width: 500px;
+  max-width: 70%;
 }
 
-.main > div {
-  border: 15px solid transparent;
-  border-image: url(src/Untitled\ design\ \(1\).png) 20% round;
+figcaption {
+  font-family: var(--secondary-font);
+  font-style: italic;
+  font-size: 1rem;
 }
 
-.main > * {
-  border: 1px solid blue;
-}
-
-.background {
-  position: static;
-  padding: 0.9rem;
-  border: 0;
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgb(240, 240, 240);
-}
-
-nav {
-  height: 1px;
-  width: 1px;
-}
-
-.content-title {
-  color: var(--primary-color1);
-  grid-area: header;
-}
-
-.profile {
-  grid-area: profile;
-  width: 100%;
-}
-
-.pp {
-  width: 170px;
-  height: 150px;
-
-  padding: 5px;
-  border: 10px solid var(--primary-color1);
-}
-
-.pp img {
-  width: 100%;
-  height: 100%;
-}
-
-.letter {
-  grid-area: letter;
-}
